@@ -39,7 +39,6 @@ export class DownloadCarteComponent implements OnInit {
     this.userService.getUsersById(localStorage.getItem('idUser')+"").subscribe((user: UserModel) =>{
       if(user){
         this.currentUser = {...user};
-        console.log(user);
         this.maisonJeunesService.getMaisonJeunesByIdUser(user.id_user).subscribe(
           (maison: MaisonModel) =>{
             

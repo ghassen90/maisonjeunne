@@ -26,6 +26,6 @@ export class MaisonJeunesService {
   }
 
   addMaisons(maison: MaisonModel): Observable<any> {
-    return this.httpClient.post( base_url+port+'/api/addMaisonJeunes', maison);
+    return this.httpClient.post( base_url+port+'/addMaisonJeunes', maison);
   }
 }

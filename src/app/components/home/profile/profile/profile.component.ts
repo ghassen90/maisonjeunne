@@ -70,7 +70,6 @@ export class ProfileComponent implements OnInit {
 
     this.maisonJeunesService.getListMaisons().subscribe(
       (maison) =>{
-        console.log(maison)
         this.listeMaison = [...maison];
       });
 
@@ -85,7 +84,9 @@ export class ProfileComponent implements OnInit {
       this.userService.getUsersById(localStorage.getItem('idUser')+"").subscribe(
         (user: UserModel) =>{
           this.currentUser = {...user};
-          this.nomPrenom = user.nom +" "+ user.prenom;
+          
+          this.nomPrenom = (localStorage.getItem('nom') ? localStorage.getItem('nom') : '' ) +' '+ (localStorage.getItem('prenom') ? localStorage.getItem('prenom') : '' );
+
       });
       if(localStorage.getItem('roles')){
         this.role = localStorage.getItem('roles')+"";
