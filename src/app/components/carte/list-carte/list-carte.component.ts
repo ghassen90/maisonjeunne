@@ -36,7 +36,6 @@ export class ListCarteComponent implements OnInit {
     this.carteService.getListCartes().subscribe((list: CarteModel[]) => {
       if (list) {
         this.listCartes = [...list];
-        console.log(this.listCartes);
         list.forEach(carte => {
           this.listeDemande = [...this.listeDemande, {
             id_cart: carte.id_carte,
@@ -67,7 +66,9 @@ export class ListCarteComponent implements OnInit {
     let nomPrenom = "";
     this.userService.getUsersById(idUsre).subscribe((user: UserModel)=>{
       if (user){
-        nomPrenom = user.nom +" " + user.prenom;
+        nomPrenom = (localStorage.getItem('nom') ? localStorage.getItem('nom') : '' ) +' '+ (localStorage.getItem('prenom') ? localStorage.getItem('prenom') : '' );
+       // this.role = localStorage.getItem('roles') +"";
+       // nomPrenom = user.nom +" " + user.prenom;
       }
     });
   }
