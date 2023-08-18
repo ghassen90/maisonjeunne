@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { UserModel } from '../components/model/user.mode';
-const base_url ='http://173.212.235.56:';
+const base_url ='https://173.212.235.56:';
 const port = 3001;
 @Injectable({
   providedIn: 'root'

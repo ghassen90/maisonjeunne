@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
     'mon-entete-personnalise':'maValeur'
   })
 };*/
-const base_url ='http://173.212.235.56:';
+const base_url ='https://173.212.235.56:';
 const port = 3001;
 @Injectable({
   providedIn: 'root'
